@@ -8,7 +8,7 @@ from homeassistant.components.vacuum import (
     PLATFORM_SCHEMA, SUPPORT_BATTERY, SUPPORT_FAN_SPEED, SUPPORT_TURN_ON,
     SUPPORT_TURN_OFF, SUPPORT_RETURN_HOME, SUPPORT_STATUS, SUPPORT_STOP, 
     SUPPORT_LOCATE, SUPPORT_CLEAN_SPOT, SUPPORT_START, VacuumDevice)
-from homeassistant.const import (CONF_IP_ADDRESS, CONF_NAME, CONF_USERNAME, CONF_PASSWORD)
+from homeassistant.const import (CONF_IP_ADDRESS, CONF_NAME, CONF_LOCAL_CODE)
 from homeassistant.exceptions import PlatformNotReady
 import homeassistant.helpers.config_validation as cv
 
@@ -27,8 +27,7 @@ FAN_SPEEDS = [FAN_SPEED_NORMAL, FAN_SPEED_MAX]
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
     vol.Required(CONF_IP_ADDRESS): cv.string,
-    vol.Required(CONF_USERNAME): cv.string,
-    vol.Required(CONF_PASSWORD): cv.string,
+    vol.Required(CONF_LOCAL_CODE): cv.string,
 }, extra=vol.ALLOW_EXTRA)
 
 # Commonly supported features
@@ -44,9 +43,7 @@ async def async_setup_platform(
         hass.data[PLATFORM] = {}
 
     ip_address = config.get(CONF_IP_ADDRESS)
-    eufy_username = config.get(CONF_USERNAME)
-    eufy_password = config.get(CONF_PASSWORD)
-    local_code = get_local_code(eufy_username, eufy_password, ip_address)
+    local_code = config.get(CONF_LOCAL_CODE)
     name = config.get(CONF_NAME)
 
     eufy_robovac = Robovac(ip=ip_address, local_code=local_code)
