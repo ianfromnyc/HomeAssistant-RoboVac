@@ -7,6 +7,6 @@
         "@bnmcg"
     ],
     "requirements": [
-        "robovac==0.0.9"
+        "git+https://github.com/BnMcG/PyRobovac.git@socket-tests"
     ]
   }
