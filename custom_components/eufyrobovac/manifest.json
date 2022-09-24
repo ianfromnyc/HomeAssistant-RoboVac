@@ -1,7 +1,7 @@
 {
     "domain": "eufyrobovac",
     "name": "Eufy RoboVac",
-    "documentation": "https://github.com/bnmcg/homeassistant-robovac",
+    "documentation": "https://github.com/ianfromnyc/homeassistant-robovac",
     "dependencies": [],
     "codeowners": [
         "@bnmcg",
@@ -10,6 +10,6 @@
     ],
     "version": "0.1.4",
     "requirements": [
-        "git+https://github.com/BnMcG/PyRobovac.git@socket-tests#robovac==0.0.9"
+        "git+https://github.com/ianfromnyc/PyRobovac.git#robovac==0.0.9"
     ]
   }
