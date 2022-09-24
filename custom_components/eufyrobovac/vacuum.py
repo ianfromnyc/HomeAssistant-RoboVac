@@ -8,7 +8,7 @@ from homeassistant.components.vacuum import (
     PLATFORM_SCHEMA, SUPPORT_BATTERY, SUPPORT_FAN_SPEED, SUPPORT_TURN_ON,
     SUPPORT_TURN_OFF, SUPPORT_RETURN_HOME, SUPPORT_STATUS, SUPPORT_STOP, 
     SUPPORT_LOCATE, SUPPORT_CLEAN_SPOT, SUPPORT_START, VacuumEntity)
-from homeassistant.const import (CONF_IP_ADDRESS, CONF_NAME, CONF_LOCAL_CODE)
+from homeassistant.const import (CONF_IP_ADDRESS, CONF_NAME)
 from homeassistant.exceptions import PlatformNotReady
 import homeassistant.helpers.config_validation as cv
 
@@ -23,6 +23,8 @@ PLATFORM = 'eufyrobovac'
 FAN_SPEED_NORMAL = '0'
 FAN_SPEED_MAX = '1'
 FAN_SPEEDS = [FAN_SPEED_NORMAL, FAN_SPEED_MAX]
+
+CONF_LOCAL_CODE = 'local_code'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
