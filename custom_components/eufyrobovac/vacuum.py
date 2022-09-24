@@ -50,7 +50,7 @@ async def async_setup_platform(
 
     eufy_robovac = Robovac(ip=ip_address, local_code=local_code)
 
-    _LOGGER.debug("Initializing communication with host %s", ip_address)
+    _LOGGER.debug("Initializing communication with RoboVac %s, host %s, local_code %s", name, ip_address, local_code)
 
     try:
         with async_timeout.timeout(9):
