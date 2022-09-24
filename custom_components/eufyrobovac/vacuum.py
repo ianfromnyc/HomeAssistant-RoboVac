@@ -7,7 +7,7 @@ import asyncio
 from homeassistant.components.vacuum import (
     PLATFORM_SCHEMA, SUPPORT_BATTERY, SUPPORT_FAN_SPEED, SUPPORT_TURN_ON,
     SUPPORT_TURN_OFF, SUPPORT_RETURN_HOME, SUPPORT_STATUS, SUPPORT_STOP, 
-    SUPPORT_LOCATE, SUPPORT_CLEAN_SPOT, SUPPORT_START, VacuumDevice)
+    SUPPORT_LOCATE, SUPPORT_CLEAN_SPOT, SUPPORT_START, VacuumEntity)
 from homeassistant.const import (CONF_IP_ADDRESS, CONF_NAME, CONF_LOCAL_CODE)
 from homeassistant.exceptions import PlatformNotReady
 import homeassistant.helpers.config_validation as cv
@@ -62,7 +62,7 @@ async def async_setup_platform(
     async_add_entities([robovac_vac], True)
 
 
-class RobovacVacuum(VacuumDevice):
+class RobovacVacuum(VacuumEntity):
     """Representation of a Eufy RoboVac Vacuum cleaner robot."""
     def __init__(self, name, eufy_robovac):
             """Initialize the RoboVac handler."""
