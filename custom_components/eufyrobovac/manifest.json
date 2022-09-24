@@ -4,8 +4,11 @@
     "documentation": "https://github.com/bnmcg/homeassistant-robovac",
     "dependencies": [],
     "codeowners": [
-        "@bnmcg"
+        "@bnmcg",
+        "@ejdraper",
+        "@ianfromnyc"
     ],
+    "version": "0.1.4"
     "requirements": [
         "git+https://github.com/BnMcG/PyRobovac.git@socket-tests#robovac==0.0.9"
     ]
