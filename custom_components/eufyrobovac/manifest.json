@@ -10,6 +10,6 @@
     ],
     "version": "0.1.4",
     "requirements": [
-        "git+https://github.com/ianfromnyc/PyRobovac.git#robovac==0.0.9"
+        "git+https://github.com/ianfromnyc/PyRobovac.git@dev#robovac==0.0.9"
     ]
   }
