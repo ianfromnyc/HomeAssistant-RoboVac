@@ -8,7 +8,7 @@
         "@ejdraper",
         "@ianfromnyc"
     ],
-    "version": "0.1.4"
+    "version": "0.1.4",
     "requirements": [
         "git+https://github.com/BnMcG/PyRobovac.git@socket-tests#robovac==0.0.9"
     ]
